@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Movie = require('../models/movie');
+const Movie = require('../models/Movie');
 
 //add new movie
 router.post('/', (req, res, next) => {
