@@ -1,0 +1,33 @@
+{
+  "name": "movie-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "start:dev": "nodemon ./bin/www",
+    "test": "mocha --exit --recursive"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "chai-http": "^4.3.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.1.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.1",
+    "morgan": "~1.9.1",
+    "swagger-jsdoc": "^3.4.0",
+    "swagger-json": "^2.0.0",
+    "swagger-ui": "^3.23.10",
+    "swagger-ui-dist": "^3.23.10",
+    "swagger-ui-express": "^4.1.1",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "express-swagger-generator": "^1.1.15"
+  }
+}
