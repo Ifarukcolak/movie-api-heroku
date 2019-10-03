@@ -4,7 +4,7 @@
 
 ### Node.js , Express , Express generator
 
-### Mongodb , firebase integration 
+### Mongodb , firebase db integration 
 
 ### Unit Testing
 
