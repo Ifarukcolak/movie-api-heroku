@@ -5,7 +5,44 @@ const router = express.Router();
 //models
 const Director = require('../models/Director');
 
-//add new director
+/**
+* @swagger
+* /api/director:
+*   post:
+*     tags:
+*       - director
+*     name: Add
+*     summary: add a new director
+*     consumes:
+*       - application/json
+*     parameters:
+*       - name: Director
+*         in: body
+*         schema:     
+*           type: object
+*           properties:
+*             name:
+*               type: string
+*             surname:
+*               type: string
+*             bio :
+*               type: string
+*             createdAt:
+*               type : Date
+*         required:
+*           - name
+*           - surname
+*       - name : token
+*         in : header
+*         required:
+*           - token
+*     responses:
+*       200:
+*         description: adding new director is successfull
+*       401:
+*         description: Unauthorized
+*       
+*/
 router.post('/', (req, res, next) => {
     const director = new Director(req.body);
 
@@ -18,7 +55,27 @@ router.post('/', (req, res, next) => {
         });
 });
 
-//get all directors
+/**
+* @swagger
+* /api/director:
+*   get:
+*     tags:
+*       - director
+*     name: get directors
+*     summary: returns all directors
+*     consumes:
+*       - application/json
+*     parameters:
+*       - name: token
+*         in: header
+*         required:
+*           - token
+*     responses:
+*       200:
+*         description: return all directors with successfully
+*       401:
+*         description: Unauthorized
+*/
 router.get('/', (req, res, next) => {
     Director.find({})
         .then((data) => {

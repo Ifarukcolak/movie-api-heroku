@@ -10,7 +10,37 @@ router.get('/', (req, res, next) => {
   res.render('index', { title: 'Express' });
 });
 
-//add new user
+/**
+* @swagger
+* /register:
+*   post:
+*     tags:
+*       - index
+*     name: Register
+*     summary: register with username and password 
+*     consumes:
+*       - application/json
+*     parameters:
+*       - name: User
+*         in: body
+*         schema:     
+*           type: object
+*           properties:
+*             username:
+*               type: string
+*             password:
+*               type: string
+*               format : password
+*         required:
+*           - username
+*           - password
+*     responses:
+*       200:
+*         description: registering new user is successfull
+*       400:
+*         description: bad request
+*       
+*/
 router.post('/register', (req, res, next) => {
   const { username, password } = req.body;
 
@@ -31,7 +61,38 @@ router.post('/register', (req, res, next) => {
 
 });
 
-//authenticate
+
+/**
+* @swagger
+* /authenticate:
+*   post:
+*     tags:
+*       - index
+*     name: authenticate
+*     summary: get access token 
+*     consumes:
+*       - application/json
+*     parameters:
+*       - name: User
+*         in: body
+*         schema:     
+*           type: object
+*           properties:
+*             username:
+*               type: string
+*             password:
+*               type: string
+*               format : password
+*         required:
+*           - username
+*           - password
+*     responses:
+*       200:
+*         description: returns access token
+*       400:
+*         description: bad request
+*       
+*/
 router.post('/authenticate', (req, res, next) => {
   const { username, password } = req.body;
 
