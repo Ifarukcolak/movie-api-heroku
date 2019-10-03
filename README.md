@@ -2,11 +2,13 @@
 
 # movie-api-heroku
 
-## Node.js Backend Service
+### Node.js Backend Service
 
-## Unit Testing
+### Unit Testing
 
-## Heroku Deployment
+### Heroku Deployment
 
-## Travis CI Integration
+### Travis CI Integration
+
+### Swagger UI Integration
 
