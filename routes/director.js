@@ -7,7 +7,7 @@ const Director = require('../models/Director');
 
 /**
 * @swagger
-* /api/director:
+* /api/directors:
 *   post:
 *     tags:
 *       - director
@@ -32,7 +32,7 @@ const Director = require('../models/Director');
 *         required:
 *           - name
 *           - surname
-*       - name : token
+*       - name : x-access-token
 *         in : header
 *         required:
 *           - token
@@ -57,7 +57,7 @@ router.post('/', (req, res, next) => {
 
 /**
 * @swagger
-* /api/director:
+* /api/directors:
 *   get:
 *     tags:
 *       - director
@@ -66,10 +66,10 @@ router.post('/', (req, res, next) => {
 *     consumes:
 *       - application/json
 *     parameters:
-*       - name: token
+*       - name: x-access-token
 *         in: header
 *         required:
-*           - token
+*           - x-access-token
 *     responses:
 *       200:
 *         description: return all directors with successfully
@@ -86,7 +86,27 @@ router.get('/', (req, res, next) => {
         });
 });
 
-//get directors with movies
+/**
+* @swagger
+* /api/directors/withMovies:
+*   get:
+*     tags:
+*       - director
+*     name: get directors with movies
+*     summary: returns all directors with movies
+*     consumes:
+*       - application/json
+*     parameters:
+*       - name: x-access-token
+*         in: header
+*         required:
+*           - x-access-token
+*     responses:
+*       200:
+*         description: return all directors with successfully
+*       401:
+*         description: Unauthorized
+*/
 router.get('/withMovies', (req, res, next) => {
     Director.aggregate(
         [

@@ -2,17 +2,18 @@
 
 # movie-api-heroku
 
-### Node.js Backend Service
+### Node.js , Express , Express generator
+
+### Mongodb , firebase integration 
 
 ### Unit Testing
 
 ### Heroku Deployment
 
+### Firebase deployment
+
 ### Travis CI Integration
 
 ### Swagger UI Integration
 
-### cmd
-
-### cmd -2
 
