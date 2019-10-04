@@ -4,13 +4,13 @@
 
 ### Node.js , Express , Express generator
 
-### Mongodb , firebase db integration 
+### Mongodb , firebase db* integration 
 
 ### Unit Testing
 
 ### Heroku Deployment
 
-### Firebase deployment
+### Firebase deployment*
 
 ### Travis CI Integration
 
