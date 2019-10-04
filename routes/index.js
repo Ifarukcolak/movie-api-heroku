@@ -5,6 +5,7 @@ const jwt=require('jsonwebtoken');
 
 //models
 const User = require('../models/User');
+
 /* GET home page. */
 router.get('/', (req, res, next) => {
   res.render('index', { title: 'Express' });
