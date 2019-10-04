@@ -3,7 +3,41 @@ const router = express.Router();
 
 const Movie = require('../models/Movie');
 
-//add new movie
+/**
+* @swagger
+* /register:
+*   post:
+*     tags:
+*       - movies
+*     name: Add movie
+*     summary: add new movie 
+*     consumes:
+*       - application/json
+*     parameters:
+*       - name: Movie
+*         in: body
+*         schema:     
+*           type: object
+*           properties:
+*             title:
+*               type: string
+*             imdb_score:
+*               type: int
+*             category:
+*               type: string
+*             year:
+*               type: Date
+*             director_id:
+*               type: string
+*         required:
+*           - title
+*     responses:
+*       200:
+*         description: adding new movie is successfull
+*       400:
+*         description: bad request
+*       
+*/
 router.post('/', (req, res, next) => {
   const { title, imdb_score, category, country, year, director_id } = req.body;
 
@@ -43,7 +77,27 @@ router.get('/top/:limit', (req, res) => {
     });
 });
 
-//get all movies
+/**
+* @swagger
+* /api/movies:
+*   get:
+*     tags:
+*       - movies
+*     name: get all movies
+*     summary: returns all movies
+*     consumes:
+*       - application/json
+*     parameters:
+*       - name: x-access-token
+*         in: header
+*         required:
+*           - x-access-token
+*     responses:
+*       200:
+*         description: return all movies with successfully
+*       401:
+*         description: Unauthorized
+*/
 router.get('/', (req, res) => {
   Movie.aggregate([
     {
