@@ -5,7 +5,7 @@ const Movie = require('../models/Movie');
 
 /**
 * @swagger
-* /register:
+* /api/movies:
 *   post:
 *     tags:
 *       - movies
